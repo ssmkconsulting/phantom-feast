@@ -115,6 +115,8 @@ canvas#game {
   background: radial-gradient(circle at 40% 30%, rgba(108, 240, 194, 0.08), transparent 40%), var(--focus);
   backdrop-filter: blur(4px);
   z-index: 10;
+  padding: 16px;
+  overflow-y: auto;
 }
 
 .overlay__card {
@@ -125,6 +127,8 @@ canvas#game {
   max-width: 560px;
   width: calc(100% - 32px);
   box-shadow: var(--shadow);
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
 }
 
 .eyebrow {
@@ -192,6 +196,8 @@ canvas#game {
   padding: 16px;
   width: min(720px, calc(100% - 32px));
   box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+  max-height: 85vh;
+  overflow-y: auto;
 }
 
 .legend-modal__header {
@@ -317,6 +323,37 @@ canvas#game {
 @media (max-width: 640px) {
   .scorebar {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .overlay__card {
+    padding: 18px;
+    font-size: 15px;
+  }
+
+  .overlay__card h1 {
+    font-size: 26px;
+  }
+
+  .overlay__card .lede {
+    font-size: 15px;
+  }
+
+  .overlay__card ul {
+    padding-left: 16px;
+  }
+
+  .overlay__buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .legend {
+    grid-template-columns: 1fr;
+  }
+
+  .legend-modal {
+    width: calc(100% - 24px);
+    max-height: 80vh;
   }
 }
 
