@@ -9,7 +9,7 @@ Static marketing page plus the **Phantom Feast** browser game.
 
 ## Run locally
 ```sh
-cd Phantom_Feast
+cd phantom-feast
 python3 -m http.server 8000
 ```
 Then open:
