@@ -30,23 +30,33 @@
     <div class="overlay__card">
       <p class="eyebrow">Quick reflex arcade</p>
       <h1>Phantom Feast</h1>
-      <p class="lede">Glide your core through the field, collect energy orbs, snag rare moving gold boosts, dodge spectral ghosts, and stack your multiplier before the clock runs out.</p>
-      <ul>
-        <li>Move with your mouse or touch. The core eases toward your pointer.</li>
-        <li>Collect teal orbs to add time and build multiplier; gold boosts are worth more but vanish fast. Triple orbs give 10s of 3× points.</li>
-        <li>Avoid poison dots—they drain points, summon ghosts, and make your core go queasy. Micro dots are tiny but supersize you briefly.</li>
-        <li>Ghosts end the run on contact—bait and sidestep their turns.</li>
-        <li>After a high score, spike obstacles appear—touching them ends your run instantly. Super ghosts may chase; stun them with the special stop orb.</li>
-        <li>Lights might flicker off for a second—stay calm and keep moving.</li>
-      </ul>
+      <p class="lede">Glide, collect boosts, dodge ghosts, and stack your multiplier before the clock runs out.</p>
       <div class="overlay__buttons">
         <button class="cta" id="play">Start run</button>
         <button class="ghost" id="view-tips">Tips</button>
         <button class="ghost" id="view-legend">Legend</button>
+        <button class="ghost" id="view-instructions">Instructions</button>
       </div>
       <div class="tips" id="tips">
         <p class="tip-title">Pro tips</p>
         <p>Ride the edges to control space, chain orbs for 5x, and give yourself room before hazards turn.</p>
+      </div>
+    </div>
+
+    <div class="legend-overlay" id="instructions-overlay">
+      <div class="legend-modal" id="instructions-modal">
+        <div class="legend-modal__header">
+          <p class="legend__title">Instructions</p>
+          <button class="ghost legend-close" id="instructions-close" type="button">Close</button>
+        </div>
+        <ul class="instructions-list">
+          <li>Move with your mouse or touch. The core eases toward your pointer.</li>
+          <li>Collect teal orbs for points, time, and multiplier; gold boosts are worth more but vanish fast. Triple orbs give 10s of 3× points.</li>
+          <li>Avoid poison dots—they drain points, summon ghosts, and make your core go queasy. Micro dots supersize you briefly.</li>
+          <li>Ghosts end the run on contact—bait and sidestep their turns. Super ghosts hunt you; stun them with the white stop orb.</li>
+          <li>After a high score, spike obstacles appear—touching them ends your run instantly.</li>
+          <li>Random short blackouts dim the arena; keep moving.</li>
+        </ul>
       </div>
     </div>
 

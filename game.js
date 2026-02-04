@@ -16,10 +16,15 @@ const restartBtn = document.getElementById('restart');
 const focusBtn = document.getElementById('toggle-focus');
 const tipsBtn = document.getElementById('view-tips');
 const legendBtn = document.getElementById('view-legend');
+const instructionsBtn = document.getElementById('view-instructions');
 const tips = document.getElementById('tips');
 const legendModal = document.getElementById('legend-modal');
 const legendOverlay = document.getElementById('legend-overlay');
 const legendClose = document.getElementById('legend-close');
+const instructionsModal = document.getElementById('instructions-modal');
+const instructionsOverlay = document.getElementById('instructions-overlay');
+const instructionsClose = document.getElementById('instructions-close');
+const scorebar = document.querySelector('.scorebar');
 
 const baseRadius = 18;
 const obstacleThreshold = 1200;
@@ -127,12 +132,16 @@ function resetRun() {
   tips?.classList.remove('open');
   legendModal?.classList.remove('open');
   legendOverlay?.classList.remove('open');
+  instructionsModal?.classList.remove('open');
+  instructionsOverlay?.classList.remove('open');
+  scorebar?.classList.add('hidden');
   updateUI();
 }
 
 function startRun() {
   state.running = true;
   overlay.style.display = 'none';
+  scorebar?.classList.remove('hidden');
 }
 
 function updateUI() {
@@ -676,6 +685,23 @@ legendOverlay?.addEventListener('click', (e) => {
   if (e.target === legendOverlay) {
     legendModal?.classList.remove('open');
     legendOverlay?.classList.remove('open');
+  }
+});
+
+instructionsBtn?.addEventListener('click', () => {
+  instructionsModal?.classList.toggle('open');
+  instructionsOverlay?.classList.toggle('open');
+});
+
+instructionsClose?.addEventListener('click', () => {
+  instructionsModal?.classList.remove('open');
+  instructionsOverlay?.classList.remove('open');
+});
+
+instructionsOverlay?.addEventListener('click', (e) => {
+  if (e.target === instructionsOverlay) {
+    instructionsModal?.classList.remove('open');
+    instructionsOverlay?.classList.remove('open');
   }
 });
 

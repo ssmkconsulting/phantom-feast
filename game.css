@@ -293,6 +293,10 @@ canvas#game {
   z-index: 12;
 }
 
+.scorebar.hidden {
+  display: none;
+}
+
 .scorebar__pill {
   display: grid;
   grid-template-columns: auto auto;
