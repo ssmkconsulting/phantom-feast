@@ -14,10 +14,8 @@ const overlay = document.getElementById('overlay');
 const playBtn = document.getElementById('play');
 const restartBtn = document.getElementById('restart');
 const focusBtn = document.getElementById('toggle-focus');
-const tipsBtn = document.getElementById('view-tips');
 const legendBtn = document.getElementById('view-legend');
 const instructionsBtn = document.getElementById('view-instructions');
-const tips = document.getElementById('tips');
 const legendModal = document.getElementById('legend-modal');
 const legendOverlay = document.getElementById('legend-overlay');
 const legendClose = document.getElementById('legend-close');
@@ -129,7 +127,6 @@ function resetRun() {
   state.player.y = canvas.height / 2;
   state.player.r = baseRadius;
   overlay.style.display = 'grid';
-  tips?.classList.remove('open');
   legendModal?.classList.remove('open');
   legendOverlay?.classList.remove('open');
   instructionsModal?.classList.remove('open');
@@ -667,11 +664,10 @@ focusBtn?.addEventListener('click', () => {
   focusBtn.textContent = document.body.classList.contains('focus-mode') ? 'Focus off' : 'Focus mode';
 });
 
-tipsBtn?.addEventListener('click', () => {
-  tips.classList.toggle('open');
-});
-
 legendBtn?.addEventListener('click', () => {
+  // close other modals first
+  instructionsModal?.classList.remove('open');
+  instructionsOverlay?.classList.remove('open');
   legendModal?.classList.toggle('open');
   legendOverlay?.classList.toggle('open');
 });
@@ -689,6 +685,8 @@ legendOverlay?.addEventListener('click', (e) => {
 });
 
 instructionsBtn?.addEventListener('click', () => {
+  legendModal?.classList.remove('open');
+  legendOverlay?.classList.remove('open');
   instructionsModal?.classList.toggle('open');
   instructionsOverlay?.classList.toggle('open');
 });

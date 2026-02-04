@@ -186,6 +186,10 @@ canvas#game {
   z-index: 20;
 }
 
+#instructions-overlay {
+  z-index: 22;
+}
+
 .legend-overlay.open {
   display: grid;
 }
@@ -211,7 +215,7 @@ canvas#game {
 .legend {
   margin-top: 14px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: 1fr;
   gap: 12px;
 }
 
